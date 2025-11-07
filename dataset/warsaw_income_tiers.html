@@ -1,0 +1,1607 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_a805079d30e2ffb9d9d09a97f198d247 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+<div style="
+    position: fixed; 
+    bottom: 40px; left: 40px; width: 150px; height: 110px; 
+    border:2px solid grey; z-index:9999; font-size:14px;
+    background-color:white; padding:10px; border-radius:8px;">
+    <b>Income Tier</b><br>
+    <i style="background:blue; width:10px; height:10px; float:left; margin-right:8px;"></i> Low<br>
+    <i style="background:green; width:10px; height:10px; float:left; margin-right:8px;"></i> Medium<br>
+    <i style="background:red; width:10px; height:10px; float:left; margin-right:8px;"></i> High<br>
+</div>
+    
+            <div class="folium-map" id="map_a805079d30e2ffb9d9d09a97f198d247" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_a805079d30e2ffb9d9d09a97f198d247 = L.map(
+                "map_a805079d30e2ffb9d9d09a97f198d247",
+                {
+                    center: [52.2297, 21.0122],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_3bb24440a88bba02066615cfc5aa4b7d = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_3bb24440a88bba02066615cfc5aa4b7d.addTo(map_a805079d30e2ffb9d9d09a97f198d247);
+        
+    
+            var circle_marker_4eceac50aba4c9098de9237fb91bbeb9 = L.circleMarker(
+                [52.11748667926035, 20.99836130844389],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(map_a805079d30e2ffb9d9d09a97f198d247);
+        
+    
+        var popup_111caf94e74779f76cce98d92eabc2e1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b8f4971e0b381645f512c43b8f3a34db = $(`<div id="html_b8f4971e0b381645f512c43b8f3a34db" style="width: 100.0%; height: 100.0%;">Income Tier: Mid-Range</div>`)[0];
+                popup_111caf94e74779f76cce98d92eabc2e1.setContent(html_b8f4971e0b381645f512c43b8f3a34db);
+            
+        
+
+        circle_marker_4eceac50aba4c9098de9237fb91bbeb9.bindPopup(popup_111caf94e74779f76cce98d92eabc2e1)
+        ;
+
+        
+    
+    
+            var circle_marker_50ff30235d58bd42a50afe088ada0590 = L.circleMarker(
+                [52.156694129517966, 20.98456377742939],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(map_a805079d30e2ffb9d9d09a97f198d247);
+        
+    
+        var popup_2259df45a7077ce3cdbedfcaff859900 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_15f4c5d4c7a09eca87d7d6d56cad1bd9 = $(`<div id="html_15f4c5d4c7a09eca87d7d6d56cad1bd9" style="width: 100.0%; height: 100.0%;">Income Tier: Mid-Range</div>`)[0];
+                popup_2259df45a7077ce3cdbedfcaff859900.setContent(html_15f4c5d4c7a09eca87d7d6d56cad1bd9);
+            
+        
+
+        circle_marker_50ff30235d58bd42a50afe088ada0590.bindPopup(popup_2259df45a7077ce3cdbedfcaff859900)
+        ;
+
+        
+    
+    
+            var circle_marker_cf241f275b1090596fb99abc2b16cff2 = L.circleMarker(
+                [52.128833390845024, 21.09994948412514],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(map_a805079d30e2ffb9d9d09a97f198d247);
+        
+    
+        var popup_f7a677c012a7f9f444d374baa4a600b5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_818d19f97126b9515ffa666f4ddef182 = $(`<div id="html_818d19f97126b9515ffa666f4ddef182" style="width: 100.0%; height: 100.0%;">Income Tier: High</div>`)[0];
+                popup_f7a677c012a7f9f444d374baa4a600b5.setContent(html_818d19f97126b9515ffa666f4ddef182);
+            
+        
+
+        circle_marker_cf241f275b1090596fb99abc2b16cff2.bindPopup(popup_f7a677c012a7f9f444d374baa4a600b5)
+        ;
+
+        
+    
+    
+            var circle_marker_9c9c98744b8fc89dd29710c30bcc7a1d = L.circleMarker(
+                [52.24660027846226, 21.250534029951123],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(map_a805079d30e2ffb9d9d09a97f198d247);
+        
+    
+        var popup_36544789c07055c61366c426ebfad072 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a74c0c1e70dfd62f10cb58e16e1805a1 = $(`<div id="html_a74c0c1e70dfd62f10cb58e16e1805a1" style="width: 100.0%; height: 100.0%;">Income Tier: Low-Mid</div>`)[0];
+                popup_36544789c07055c61366c426ebfad072.setContent(html_a74c0c1e70dfd62f10cb58e16e1805a1);
+            
+        
+
+        circle_marker_9c9c98744b8fc89dd29710c30bcc7a1d.bindPopup(popup_36544789c07055c61366c426ebfad072)
+        ;
+
+        
+    
+    
+            var circle_marker_51f99bf5f473df2d1bb553cc54dc18f4 = L.circleMarker(
+                [52.15418781834211, 21.049040918099212],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(map_a805079d30e2ffb9d9d09a97f198d247);
+        
+    
+        var popup_c43b3963e51dadd507a868b73d277672 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c28b9493244bee4cfd32ed241b21b3f1 = $(`<div id="html_c28b9493244bee4cfd32ed241b21b3f1" style="width: 100.0%; height: 100.0%;">Income Tier: Mid-Range</div>`)[0];
+                popup_c43b3963e51dadd507a868b73d277672.setContent(html_c28b9493244bee4cfd32ed241b21b3f1);
+            
+        
+
+        circle_marker_51f99bf5f473df2d1bb553cc54dc18f4.bindPopup(popup_c43b3963e51dadd507a868b73d277672)
+        ;
+
+        
+    
+    
+            var circle_marker_6b72f56b4faf983c2f52b3b1ca3d5ad0 = L.circleMarker(
+                [52.13667147493749, 21.06999129492735],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(map_a805079d30e2ffb9d9d09a97f198d247);
+        
+    
+        var popup_82a7f1ba152eb76f374ff4feccdd2e9e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bf695d4305b3ebc06f11ad96f2f40a93 = $(`<div id="html_bf695d4305b3ebc06f11ad96f2f40a93" style="width: 100.0%; height: 100.0%;">Income Tier: Mid-Range</div>`)[0];
+                popup_82a7f1ba152eb76f374ff4feccdd2e9e.setContent(html_bf695d4305b3ebc06f11ad96f2f40a93);
+            
+        
+
+        circle_marker_6b72f56b4faf983c2f52b3b1ca3d5ad0.bindPopup(popup_82a7f1ba152eb76f374ff4feccdd2e9e)
+        ;
+
+        
+    
+    
+            var circle_marker_a5dcf6298a1107f36ac40cd80a4d07e0 = L.circleMarker(
+                [52.24348667855285, 21.23325432015442],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(map_a805079d30e2ffb9d9d09a97f198d247);
+        
+    
+        var popup_8878a24b54f048ab1664308c25e8ed5d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c06b77f9a8455665aa9af66ecef95263 = $(`<div id="html_c06b77f9a8455665aa9af66ecef95263" style="width: 100.0%; height: 100.0%;">Income Tier: Low-Mid</div>`)[0];
+                popup_8878a24b54f048ab1664308c25e8ed5d.setContent(html_c06b77f9a8455665aa9af66ecef95263);
+            
+        
+
+        circle_marker_a5dcf6298a1107f36ac40cd80a4d07e0.bindPopup(popup_8878a24b54f048ab1664308c25e8ed5d)
+        ;
+
+        
+    
+    
+            var circle_marker_af3e8a238464ac2fb3757e7818dc9073 = L.circleMarker(
+                [52.13335571286983, 21.08599605315644],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(map_a805079d30e2ffb9d9d09a97f198d247);
+        
+    
+        var popup_5ca5202e8b8717b6c1229c156af9c943 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7e59078f5254cd8af890582b0696e6a2 = $(`<div id="html_7e59078f5254cd8af890582b0696e6a2" style="width: 100.0%; height: 100.0%;">Income Tier: High</div>`)[0];
+                popup_5ca5202e8b8717b6c1229c156af9c943.setContent(html_7e59078f5254cd8af890582b0696e6a2);
+            
+        
+
+        circle_marker_af3e8a238464ac2fb3757e7818dc9073.bindPopup(popup_5ca5202e8b8717b6c1229c156af9c943)
+        ;
+
+        
+    
+    
+            var circle_marker_d31804b9d4445e414483a25c02163243 = L.circleMarker(
+                [52.16504292983291, 21.068682561711658],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(map_a805079d30e2ffb9d9d09a97f198d247);
+        
+    
+        var popup_5fdbe11d544962fa224150abd87120f4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2b5e45b61397af5f40c3ea15ba9d613f = $(`<div id="html_2b5e45b61397af5f40c3ea15ba9d613f" style="width: 100.0%; height: 100.0%;">Income Tier: High</div>`)[0];
+                popup_5fdbe11d544962fa224150abd87120f4.setContent(html_2b5e45b61397af5f40c3ea15ba9d613f);
+            
+        
+
+        circle_marker_d31804b9d4445e414483a25c02163243.bindPopup(popup_5fdbe11d544962fa224150abd87120f4)
+        ;
+
+        
+    
+    
+            var circle_marker_2d126c87f189f9494314940ec2c7994d = L.circleMarker(
+                [52.200346415043086, 20.953483726373083],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(map_a805079d30e2ffb9d9d09a97f198d247);
+        
+    
+        var popup_a83a4cfddcf62cae373751df3db47ca1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6ba60e4639c4e8e9dd2ea1f7a72af119 = $(`<div id="html_6ba60e4639c4e8e9dd2ea1f7a72af119" style="width: 100.0%; height: 100.0%;">Income Tier: Mid-Range</div>`)[0];
+                popup_a83a4cfddcf62cae373751df3db47ca1.setContent(html_6ba60e4639c4e8e9dd2ea1f7a72af119);
+            
+        
+
+        circle_marker_2d126c87f189f9494314940ec2c7994d.bindPopup(popup_a83a4cfddcf62cae373751df3db47ca1)
+        ;
+
+        
+    
+    
+            var circle_marker_151681f37193aa50b280d16938058a5b = L.circleMarker(
+                [52.1504474248343, 21.008768995975117],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(map_a805079d30e2ffb9d9d09a97f198d247);
+        
+    
+        var popup_7935315aad880ad716509e9bf41e75d9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_130524a8ae1b356f808dd009e7d03ff8 = $(`<div id="html_130524a8ae1b356f808dd009e7d03ff8" style="width: 100.0%; height: 100.0%;">Income Tier: Mid-Range</div>`)[0];
+                popup_7935315aad880ad716509e9bf41e75d9.setContent(html_130524a8ae1b356f808dd009e7d03ff8);
+            
+        
+
+        circle_marker_151681f37193aa50b280d16938058a5b.bindPopup(popup_7935315aad880ad716509e9bf41e75d9)
+        ;
+
+        
+    
+    
+            var circle_marker_ed21ca670e40c3949e34e5da52d6240b = L.circleMarker(
+                [52.19936447549696, 20.874925835151352],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(map_a805079d30e2ffb9d9d09a97f198d247);
+        
+    
+        var popup_6e214fdc071bb3fb285a88ca68e90373 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cb28ef71ec44425899440d113663f198 = $(`<div id="html_cb28ef71ec44425899440d113663f198" style="width: 100.0%; height: 100.0%;">Income Tier: Low-Mid</div>`)[0];
+                popup_6e214fdc071bb3fb285a88ca68e90373.setContent(html_cb28ef71ec44425899440d113663f198);
+            
+        
+
+        circle_marker_ed21ca670e40c3949e34e5da52d6240b.bindPopup(popup_6e214fdc071bb3fb285a88ca68e90373)
+        ;
+
+        
+    
+    
+            var circle_marker_acaa615ee2b004998f2006bbc9f002a2 = L.circleMarker(
+                [52.16764171070762, 21.09687231604403],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(map_a805079d30e2ffb9d9d09a97f198d247);
+        
+    
+        var popup_913491983f341c3e8b62dbf4f9922ce0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6c73734506f87d6b4f9e4c8ad752ffb7 = $(`<div id="html_6c73734506f87d6b4f9e4c8ad752ffb7" style="width: 100.0%; height: 100.0%;">Income Tier: High</div>`)[0];
+                popup_913491983f341c3e8b62dbf4f9922ce0.setContent(html_6c73734506f87d6b4f9e4c8ad752ffb7);
+            
+        
+
+        circle_marker_acaa615ee2b004998f2006bbc9f002a2.bindPopup(popup_913491983f341c3e8b62dbf4f9922ce0)
+        ;
+
+        
+    
+    
+            var circle_marker_835f728ea85dbe3da25b0c640c001e2b = L.circleMarker(
+                [52.25834111137421, 20.974890955446636],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(map_a805079d30e2ffb9d9d09a97f198d247);
+        
+    
+        var popup_f4ccb6efea483917441f93da9ba727ac = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3dd3c6ab70f17c7a9b29833f30644416 = $(`<div id="html_3dd3c6ab70f17c7a9b29833f30644416" style="width: 100.0%; height: 100.0%;">Income Tier: High</div>`)[0];
+                popup_f4ccb6efea483917441f93da9ba727ac.setContent(html_3dd3c6ab70f17c7a9b29833f30644416);
+            
+        
+
+        circle_marker_835f728ea85dbe3da25b0c640c001e2b.bindPopup(popup_f4ccb6efea483917441f93da9ba727ac)
+        ;
+
+        
+    
+    
+            var circle_marker_b07b8b2e010bec3da3972a5407f7335e = L.circleMarker(
+                [52.17900105008729, 20.960660649916992],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(map_a805079d30e2ffb9d9d09a97f198d247);
+        
+    
+        var popup_f1143f7db4c086e3410553ccacc1c3da = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8f1878fc56f3821d1d1983ed3c159cb7 = $(`<div id="html_8f1878fc56f3821d1d1983ed3c159cb7" style="width: 100.0%; height: 100.0%;">Income Tier: Mid-Range</div>`)[0];
+                popup_f1143f7db4c086e3410553ccacc1c3da.setContent(html_8f1878fc56f3821d1d1983ed3c159cb7);
+            
+        
+
+        circle_marker_b07b8b2e010bec3da3972a5407f7335e.bindPopup(popup_f1143f7db4c086e3410553ccacc1c3da)
+        ;
+
+        
+    
+    
+            var circle_marker_0dc449e04adca43a0b0d8cb8d9095105 = L.circleMarker(
+                [52.2427809904091, 21.209420927298805],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(map_a805079d30e2ffb9d9d09a97f198d247);
+        
+    
+        var popup_038c3b308769fa6287aa46395b811d95 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b1c58c1bc99de6b18ea6e779adc6da12 = $(`<div id="html_b1c58c1bc99de6b18ea6e779adc6da12" style="width: 100.0%; height: 100.0%;">Income Tier: Low-Mid</div>`)[0];
+                popup_038c3b308769fa6287aa46395b811d95.setContent(html_b1c58c1bc99de6b18ea6e779adc6da12);
+            
+        
+
+        circle_marker_0dc449e04adca43a0b0d8cb8d9095105.bindPopup(popup_038c3b308769fa6287aa46395b811d95)
+        ;
+
+        
+    
+    
+            var circle_marker_6aefc1856bed0a23bddc57218a295180 = L.circleMarker(
+                [52.25311776266877, 20.92966493451237],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(map_a805079d30e2ffb9d9d09a97f198d247);
+        
+    
+        var popup_b5057ed09ec700aac95ff07162f33b43 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e2f4c76d4cc77f5e7a89c462db2642d4 = $(`<div id="html_e2f4c76d4cc77f5e7a89c462db2642d4" style="width: 100.0%; height: 100.0%;">Income Tier: Low-Mid</div>`)[0];
+                popup_b5057ed09ec700aac95ff07162f33b43.setContent(html_e2f4c76d4cc77f5e7a89c462db2642d4);
+            
+        
+
+        circle_marker_6aefc1856bed0a23bddc57218a295180.bindPopup(popup_b5057ed09ec700aac95ff07162f33b43)
+        ;
+
+        
+    
+    
+            var circle_marker_15b22ff75bd3b3f443daaee03a72f048 = L.circleMarker(
+                [52.22860374803772, 21.21867240765442],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(map_a805079d30e2ffb9d9d09a97f198d247);
+        
+    
+        var popup_56c4a516822b84520ecffd287a526946 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_95ae3cec0222ee0b07663accae546b42 = $(`<div id="html_95ae3cec0222ee0b07663accae546b42" style="width: 100.0%; height: 100.0%;">Income Tier: Low-Mid</div>`)[0];
+                popup_56c4a516822b84520ecffd287a526946.setContent(html_95ae3cec0222ee0b07663accae546b42);
+            
+        
+
+        circle_marker_15b22ff75bd3b3f443daaee03a72f048.bindPopup(popup_56c4a516822b84520ecffd287a526946)
+        ;
+
+        
+    
+    
+            var circle_marker_74d79a3abbfa69590f75716c0e3bee10 = L.circleMarker(
+                [52.20664058292717, 21.0984996170715],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(map_a805079d30e2ffb9d9d09a97f198d247);
+        
+    
+        var popup_e12661b946d4baf2b3f389f3636540ce = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e5b0663e3359845cd5f852b917721ca2 = $(`<div id="html_e5b0663e3359845cd5f852b917721ca2" style="width: 100.0%; height: 100.0%;">Income Tier: Mid-Range</div>`)[0];
+                popup_e12661b946d4baf2b3f389f3636540ce.setContent(html_e5b0663e3359845cd5f852b917721ca2);
+            
+        
+
+        circle_marker_74d79a3abbfa69590f75716c0e3bee10.bindPopup(popup_e12661b946d4baf2b3f389f3636540ce)
+        ;
+
+        
+    
+    
+            var circle_marker_668249d5530a73d315f3c4d0fcc4f05a = L.circleMarker(
+                [52.16829305620719, 21.094679636751007],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(map_a805079d30e2ffb9d9d09a97f198d247);
+        
+    
+        var popup_e58c1dbe7f3ce26256354042c16be517 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f1d3334ad002f33b64110ffacbe0a6e0 = $(`<div id="html_f1d3334ad002f33b64110ffacbe0a6e0" style="width: 100.0%; height: 100.0%;">Income Tier: High</div>`)[0];
+                popup_e58c1dbe7f3ce26256354042c16be517.setContent(html_f1d3334ad002f33b64110ffacbe0a6e0);
+            
+        
+
+        circle_marker_668249d5530a73d315f3c4d0fcc4f05a.bindPopup(popup_e58c1dbe7f3ce26256354042c16be517)
+        ;
+
+        
+    
+    
+            var circle_marker_3a70cd82a3f8a437c7efe1c7d169a6b1 = L.circleMarker(
+                [52.19947943206479, 20.933455959784272],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(map_a805079d30e2ffb9d9d09a97f198d247);
+        
+    
+        var popup_34f4394d14562ef89ca95cc8a47a2b30 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c0c53469b6937d165a50a3fdad93c5f0 = $(`<div id="html_c0c53469b6937d165a50a3fdad93c5f0" style="width: 100.0%; height: 100.0%;">Income Tier: Mid-Range</div>`)[0];
+                popup_34f4394d14562ef89ca95cc8a47a2b30.setContent(html_c0c53469b6937d165a50a3fdad93c5f0);
+            
+        
+
+        circle_marker_3a70cd82a3f8a437c7efe1c7d169a6b1.bindPopup(popup_34f4394d14562ef89ca95cc8a47a2b30)
+        ;
+
+        
+    
+    
+            var circle_marker_3e1de6a9ab9d8638cb7d1f96a924ee5d = L.circleMarker(
+                [52.28281355283964, 21.076809947765895],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(map_a805079d30e2ffb9d9d09a97f198d247);
+        
+    
+        var popup_fdb080fcdce75a2f35295c48bd5c42a9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f08779c49cdd24557874b38f09e3cd42 = $(`<div id="html_f08779c49cdd24557874b38f09e3cd42" style="width: 100.0%; height: 100.0%;">Income Tier: Low-Mid</div>`)[0];
+                popup_fdb080fcdce75a2f35295c48bd5c42a9.setContent(html_f08779c49cdd24557874b38f09e3cd42);
+            
+        
+
+        circle_marker_3e1de6a9ab9d8638cb7d1f96a924ee5d.bindPopup(popup_fdb080fcdce75a2f35295c48bd5c42a9)
+        ;
+
+        
+    
+    
+            var circle_marker_141184d82a617a9a76200865f25175a9 = L.circleMarker(
+                [52.28680625879884, 21.022024696587646],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(map_a805079d30e2ffb9d9d09a97f198d247);
+        
+    
+        var popup_4a775848dbf6cd11384cd4db880ad4c9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_815cdb45f67b29001c4e3736dce935b1 = $(`<div id="html_815cdb45f67b29001c4e3736dce935b1" style="width: 100.0%; height: 100.0%;">Income Tier: Low-Mid</div>`)[0];
+                popup_4a775848dbf6cd11384cd4db880ad4c9.setContent(html_815cdb45f67b29001c4e3736dce935b1);
+            
+        
+
+        circle_marker_141184d82a617a9a76200865f25175a9.bindPopup(popup_4a775848dbf6cd11384cd4db880ad4c9)
+        ;
+
+        
+    
+    
+            var circle_marker_1938bbd4ffec83344aa70c2b94a47b53 = L.circleMarker(
+                [52.2521743125194, 21.189421989993363],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(map_a805079d30e2ffb9d9d09a97f198d247);
+        
+    
+        var popup_abd4d1d16df8c73616ce5b05692e1a98 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c1d9793c5bcccaed489b621569071d62 = $(`<div id="html_c1d9793c5bcccaed489b621569071d62" style="width: 100.0%; height: 100.0%;">Income Tier: Low-Mid</div>`)[0];
+                popup_abd4d1d16df8c73616ce5b05692e1a98.setContent(html_c1d9793c5bcccaed489b621569071d62);
+            
+        
+
+        circle_marker_1938bbd4ffec83344aa70c2b94a47b53.bindPopup(popup_abd4d1d16df8c73616ce5b05692e1a98)
+        ;
+
+        
+    
+    
+            var circle_marker_af383a8284d4667049a23544d23bcc7a = L.circleMarker(
+                [52.178243277903086, 20.91821798495908],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(map_a805079d30e2ffb9d9d09a97f198d247);
+        
+    
+        var popup_738ee857a9a888162460b509fee5aa03 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_12fc6c3a90b4082f00f0bb3b170f6258 = $(`<div id="html_12fc6c3a90b4082f00f0bb3b170f6258" style="width: 100.0%; height: 100.0%;">Income Tier: Mid-Range</div>`)[0];
+                popup_738ee857a9a888162460b509fee5aa03.setContent(html_12fc6c3a90b4082f00f0bb3b170f6258);
+            
+        
+
+        circle_marker_af383a8284d4667049a23544d23bcc7a.bindPopup(popup_738ee857a9a888162460b509fee5aa03)
+        ;
+
+        
+    
+    
+            var circle_marker_d7e7160fd32b476ff9c72181d828f255 = L.circleMarker(
+                [52.20403604498145, 20.94343295483908],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(map_a805079d30e2ffb9d9d09a97f198d247);
+        
+    
+        var popup_a6c52caa0d4a55ef5181de852b5a3901 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5e1807e9224939f6d7460c93f9d2672d = $(`<div id="html_5e1807e9224939f6d7460c93f9d2672d" style="width: 100.0%; height: 100.0%;">Income Tier: Mid-Range</div>`)[0];
+                popup_a6c52caa0d4a55ef5181de852b5a3901.setContent(html_5e1807e9224939f6d7460c93f9d2672d);
+            
+        
+
+        circle_marker_d7e7160fd32b476ff9c72181d828f255.bindPopup(popup_a6c52caa0d4a55ef5181de852b5a3901)
+        ;
+
+        
+    
+    
+            var circle_marker_0118dd60d981e375533d459a33242c6b = L.circleMarker(
+                [52.21919292447814, 21.037906315042353],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(map_a805079d30e2ffb9d9d09a97f198d247);
+        
+    
+        var popup_c71503528acbe1adf194cc191473ea0f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_27afa54991be0bdedc34a19525b1dacf = $(`<div id="html_27afa54991be0bdedc34a19525b1dacf" style="width: 100.0%; height: 100.0%;">Income Tier: High</div>`)[0];
+                popup_c71503528acbe1adf194cc191473ea0f.setContent(html_27afa54991be0bdedc34a19525b1dacf);
+            
+        
+
+        circle_marker_0118dd60d981e375533d459a33242c6b.bindPopup(popup_c71503528acbe1adf194cc191473ea0f)
+        ;
+
+        
+    
+    
+            var circle_marker_31a36731d8b481ee791befae2db41290 = L.circleMarker(
+                [52.24140305444835, 21.009152517873016],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(map_a805079d30e2ffb9d9d09a97f198d247);
+        
+    
+        var popup_dd98f9587f2a6388b3b7b043144052d9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2d402b4110ec3ed19ad2a10947ecb878 = $(`<div id="html_2d402b4110ec3ed19ad2a10947ecb878" style="width: 100.0%; height: 100.0%;">Income Tier: High</div>`)[0];
+                popup_dd98f9587f2a6388b3b7b043144052d9.setContent(html_2d402b4110ec3ed19ad2a10947ecb878);
+            
+        
+
+        circle_marker_31a36731d8b481ee791befae2db41290.bindPopup(popup_dd98f9587f2a6388b3b7b043144052d9)
+        ;
+
+        
+    
+    
+            var circle_marker_d57e4b7c4da1c8bf05aa47aa228f3f7e = L.circleMarker(
+                [52.148020412989624, 21.00397366688552],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(map_a805079d30e2ffb9d9d09a97f198d247);
+        
+    
+        var popup_67be2ebfc29c8ac7b7076d9ebb6b4353 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c4dc4c6a59e8932cac5dfbbf4db2a48c = $(`<div id="html_c4dc4c6a59e8932cac5dfbbf4db2a48c" style="width: 100.0%; height: 100.0%;">Income Tier: Mid-Range</div>`)[0];
+                popup_67be2ebfc29c8ac7b7076d9ebb6b4353.setContent(html_c4dc4c6a59e8932cac5dfbbf4db2a48c);
+            
+        
+
+        circle_marker_d57e4b7c4da1c8bf05aa47aa228f3f7e.bindPopup(popup_67be2ebfc29c8ac7b7076d9ebb6b4353)
+        ;
+
+        
+    
+    
+            var circle_marker_77a14b233fc8c89f91eecff649e66d4a = L.circleMarker(
+                [52.1623836471418, 20.98986424614293],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(map_a805079d30e2ffb9d9d09a97f198d247);
+        
+    
+        var popup_bd355b3f8bbdefed8eb8dd25541af6b4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4cac0e41fa12af47af81da9be894f8bb = $(`<div id="html_4cac0e41fa12af47af81da9be894f8bb" style="width: 100.0%; height: 100.0%;">Income Tier: Mid-Range</div>`)[0];
+                popup_bd355b3f8bbdefed8eb8dd25541af6b4.setContent(html_4cac0e41fa12af47af81da9be894f8bb);
+            
+        
+
+        circle_marker_77a14b233fc8c89f91eecff649e66d4a.bindPopup(popup_bd355b3f8bbdefed8eb8dd25541af6b4)
+        ;
+
+        
+    
+    
+            var circle_marker_517961eb63076e7940ab5be1fce48321 = L.circleMarker(
+                [52.2322952677002, 20.948593157455324],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(map_a805079d30e2ffb9d9d09a97f198d247);
+        
+    
+        var popup_9bfd091412a3143d4a79cc154848a1e7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_005e44e14fc38227308067dd54ccbc2f = $(`<div id="html_005e44e14fc38227308067dd54ccbc2f" style="width: 100.0%; height: 100.0%;">Income Tier: Mid-Range</div>`)[0];
+                popup_9bfd091412a3143d4a79cc154848a1e7.setContent(html_005e44e14fc38227308067dd54ccbc2f);
+            
+        
+
+        circle_marker_517961eb63076e7940ab5be1fce48321.bindPopup(popup_9bfd091412a3143d4a79cc154848a1e7)
+        ;
+
+        
+    
+    
+            var circle_marker_6f8553e83756626095b0ea42eff66814 = L.circleMarker(
+                [52.22893036639336, 20.923839094207977],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(map_a805079d30e2ffb9d9d09a97f198d247);
+        
+    
+        var popup_32ca48baa1a827af0d4dd5048f1eeab6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4a5e21d6a65e85d37027f5b9f85b3b4e = $(`<div id="html_4a5e21d6a65e85d37027f5b9f85b3b4e" style="width: 100.0%; height: 100.0%;">Income Tier: Mid-Range</div>`)[0];
+                popup_32ca48baa1a827af0d4dd5048f1eeab6.setContent(html_4a5e21d6a65e85d37027f5b9f85b3b4e);
+            
+        
+
+        circle_marker_6f8553e83756626095b0ea42eff66814.bindPopup(popup_32ca48baa1a827af0d4dd5048f1eeab6)
+        ;
+
+        
+    
+    
+            var circle_marker_b82e348768e627c92871914381edc665 = L.circleMarker(
+                [52.27723987413142, 21.09122035883995],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(map_a805079d30e2ffb9d9d09a97f198d247);
+        
+    
+        var popup_6391833c9d5e495a66a9d8f174d576c4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ce08865e0c4a4908d561c917e078ab3a = $(`<div id="html_ce08865e0c4a4908d561c917e078ab3a" style="width: 100.0%; height: 100.0%;">Income Tier: Low-Mid</div>`)[0];
+                popup_6391833c9d5e495a66a9d8f174d576c4.setContent(html_ce08865e0c4a4908d561c917e078ab3a);
+            
+        
+
+        circle_marker_b82e348768e627c92871914381edc665.bindPopup(popup_6391833c9d5e495a66a9d8f174d576c4)
+        ;
+
+        
+    
+    
+            var circle_marker_a58eefb4d2e04aba997afcb6c679c31e = L.circleMarker(
+                [52.15491780584581, 20.959533518715087],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(map_a805079d30e2ffb9d9d09a97f198d247);
+        
+    
+        var popup_eed8446719a40f3eb0c232c441438116 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6571d9302e4f3dadbe2d5e4929a4e074 = $(`<div id="html_6571d9302e4f3dadbe2d5e4929a4e074" style="width: 100.0%; height: 100.0%;">Income Tier: Mid-Range</div>`)[0];
+                popup_eed8446719a40f3eb0c232c441438116.setContent(html_6571d9302e4f3dadbe2d5e4929a4e074);
+            
+        
+
+        circle_marker_a58eefb4d2e04aba997afcb6c679c31e.bindPopup(popup_eed8446719a40f3eb0c232c441438116)
+        ;
+
+        
+    
+    
+            var circle_marker_0bad47ad52964fc64eeb73298c8ef935 = L.circleMarker(
+                [52.11593825825106, 21.00928442274467],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(map_a805079d30e2ffb9d9d09a97f198d247);
+        
+    
+        var popup_db99f5b296678b55ed7e36200f00fffa = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8c8528494a5d6498d107b7b8f3acee0c = $(`<div id="html_8c8528494a5d6498d107b7b8f3acee0c" style="width: 100.0%; height: 100.0%;">Income Tier: Mid-Range</div>`)[0];
+                popup_db99f5b296678b55ed7e36200f00fffa.setContent(html_8c8528494a5d6498d107b7b8f3acee0c);
+            
+        
+
+        circle_marker_0bad47ad52964fc64eeb73298c8ef935.bindPopup(popup_db99f5b296678b55ed7e36200f00fffa)
+        ;
+
+        
+    
+    
+            var circle_marker_b4b8e1d8f297d0d2e05119c80c940524 = L.circleMarker(
+                [52.18448198112995, 21.08151841598395],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(map_a805079d30e2ffb9d9d09a97f198d247);
+        
+    
+        var popup_c2a9ecf296a39e2c5f1af6d3c76b9e9a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ca0cab37b919f88639dc84d663008ede = $(`<div id="html_ca0cab37b919f88639dc84d663008ede" style="width: 100.0%; height: 100.0%;">Income Tier: High</div>`)[0];
+                popup_c2a9ecf296a39e2c5f1af6d3c76b9e9a.setContent(html_ca0cab37b919f88639dc84d663008ede);
+            
+        
+
+        circle_marker_b4b8e1d8f297d0d2e05119c80c940524.bindPopup(popup_c2a9ecf296a39e2c5f1af6d3c76b9e9a)
+        ;
+
+        
+    
+    
+            var circle_marker_efae84673b36cc3731d520b6738d3052 = L.circleMarker(
+                [52.28596845429756, 21.086949868310786],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(map_a805079d30e2ffb9d9d09a97f198d247);
+        
+    
+        var popup_c1ecf825068198bca9376af6a9f47f17 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7136d1a88f1ff89da7348f501722b11a = $(`<div id="html_7136d1a88f1ff89da7348f501722b11a" style="width: 100.0%; height: 100.0%;">Income Tier: Low-Mid</div>`)[0];
+                popup_c1ecf825068198bca9376af6a9f47f17.setContent(html_7136d1a88f1ff89da7348f501722b11a);
+            
+        
+
+        circle_marker_efae84673b36cc3731d520b6738d3052.bindPopup(popup_c1ecf825068198bca9376af6a9f47f17)
+        ;
+
+        
+    
+    
+            var circle_marker_ac3d825e1a223666151e9ed31eb56381 = L.circleMarker(
+                [52.20231450911257, 20.871364559705633],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(map_a805079d30e2ffb9d9d09a97f198d247);
+        
+    
+        var popup_4dbd3ce567c8279b2089f8cd359e5bd5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4dba17fe4356c8163e5311a6a5f31abb = $(`<div id="html_4dba17fe4356c8163e5311a6a5f31abb" style="width: 100.0%; height: 100.0%;">Income Tier: Low-Mid</div>`)[0];
+                popup_4dbd3ce567c8279b2089f8cd359e5bd5.setContent(html_4dba17fe4356c8163e5311a6a5f31abb);
+            
+        
+
+        circle_marker_ac3d825e1a223666151e9ed31eb56381.bindPopup(popup_4dbd3ce567c8279b2089f8cd359e5bd5)
+        ;
+
+        
+    
+    
+            var circle_marker_16957beee2babfe4589139bdc35df0e2 = L.circleMarker(
+                [52.213523577368264, 21.23126289753785],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(map_a805079d30e2ffb9d9d09a97f198d247);
+        
+    
+        var popup_aa8c3c3635f03e04712a845cec29b7fb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f9b7fa5e0c4fd70f753190d97c4b1ca3 = $(`<div id="html_f9b7fa5e0c4fd70f753190d97c4b1ca3" style="width: 100.0%; height: 100.0%;">Income Tier: Low-Mid</div>`)[0];
+                popup_aa8c3c3635f03e04712a845cec29b7fb.setContent(html_f9b7fa5e0c4fd70f753190d97c4b1ca3);
+            
+        
+
+        circle_marker_16957beee2babfe4589139bdc35df0e2.bindPopup(popup_aa8c3c3635f03e04712a845cec29b7fb)
+        ;
+
+        
+    
+    
+            var circle_marker_2c28c71b0065ad4dff1722c1db026275 = L.circleMarker(
+                [52.23670437328933, 21.213222598972603],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(map_a805079d30e2ffb9d9d09a97f198d247);
+        
+    
+        var popup_e9a71d73f7513b5cb148ad57cf202803 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_20978ab1f90c6ca0dffd4489f990184e = $(`<div id="html_20978ab1f90c6ca0dffd4489f990184e" style="width: 100.0%; height: 100.0%;">Income Tier: Low-Mid</div>`)[0];
+                popup_e9a71d73f7513b5cb148ad57cf202803.setContent(html_20978ab1f90c6ca0dffd4489f990184e);
+            
+        
+
+        circle_marker_2c28c71b0065ad4dff1722c1db026275.bindPopup(popup_e9a71d73f7513b5cb148ad57cf202803)
+        ;
+
+        
+    
+    
+            var circle_marker_275956e301984102629a86880376f5f9 = L.circleMarker(
+                [52.177998813219865, 21.10974792709323],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(map_a805079d30e2ffb9d9d09a97f198d247);
+        
+    
+        var popup_14742bc27fa35835f25b99991d8ca406 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ecb058909876cd11e8214634dc7978fc = $(`<div id="html_ecb058909876cd11e8214634dc7978fc" style="width: 100.0%; height: 100.0%;">Income Tier: High</div>`)[0];
+                popup_14742bc27fa35835f25b99991d8ca406.setContent(html_ecb058909876cd11e8214634dc7978fc);
+            
+        
+
+        circle_marker_275956e301984102629a86880376f5f9.bindPopup(popup_14742bc27fa35835f25b99991d8ca406)
+        ;
+
+        
+    
+    
+            var circle_marker_07afe28f00687895390ee93b0044d823 = L.circleMarker(
+                [52.12035198728498, 21.02531838124155],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(map_a805079d30e2ffb9d9d09a97f198d247);
+        
+    
+        var popup_e24b3f90de6d756158facc9227c4d6a8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c226dcaf43ac11ff68b8d6a59b06f5f3 = $(`<div id="html_c226dcaf43ac11ff68b8d6a59b06f5f3" style="width: 100.0%; height: 100.0%;">Income Tier: Mid-Range</div>`)[0];
+                popup_e24b3f90de6d756158facc9227c4d6a8.setContent(html_c226dcaf43ac11ff68b8d6a59b06f5f3);
+            
+        
+
+        circle_marker_07afe28f00687895390ee93b0044d823.bindPopup(popup_e24b3f90de6d756158facc9227c4d6a8)
+        ;
+
+        
+    
+    
+            var circle_marker_30b9378e8ce259d46b3d6d5f95fe11bf = L.circleMarker(
+                [52.251955674702195, 21.140515523435894],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(map_a805079d30e2ffb9d9d09a97f198d247);
+        
+    
+        var popup_f8356b26590058f793494216e010b19f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4bfbc9151d602e5dea04f26eb033a092 = $(`<div id="html_4bfbc9151d602e5dea04f26eb033a092" style="width: 100.0%; height: 100.0%;">Income Tier: Low-Mid</div>`)[0];
+                popup_f8356b26590058f793494216e010b19f.setContent(html_4bfbc9151d602e5dea04f26eb033a092);
+            
+        
+
+        circle_marker_30b9378e8ce259d46b3d6d5f95fe11bf.bindPopup(popup_f8356b26590058f793494216e010b19f)
+        ;
+
+        
+    
+    
+            var circle_marker_0edac65e31c2338994ed38f0fb1360bf = L.circleMarker(
+                [52.245606248863886, 21.183931971618453],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(map_a805079d30e2ffb9d9d09a97f198d247);
+        
+    
+        var popup_9b45f5e39038c2c75895d9e36de1e9fa = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_efa3ca883bfd71639866c0c256707578 = $(`<div id="html_efa3ca883bfd71639866c0c256707578" style="width: 100.0%; height: 100.0%;">Income Tier: Low-Mid</div>`)[0];
+                popup_9b45f5e39038c2c75895d9e36de1e9fa.setContent(html_efa3ca883bfd71639866c0c256707578);
+            
+        
+
+        circle_marker_0edac65e31c2338994ed38f0fb1360bf.bindPopup(popup_9b45f5e39038c2c75895d9e36de1e9fa)
+        ;
+
+        
+    
+    
+            var circle_marker_cbd28117711cd3fcffe45d04a86c1389 = L.circleMarker(
+                [52.18593504555774, 20.919199260127954],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(map_a805079d30e2ffb9d9d09a97f198d247);
+        
+    
+        var popup_101223ff4f3fb141fce0c3fa6b7d4c00 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c2aaa3480859e6fe855d1598c0d103fd = $(`<div id="html_c2aaa3480859e6fe855d1598c0d103fd" style="width: 100.0%; height: 100.0%;">Income Tier: Mid-Range</div>`)[0];
+                popup_101223ff4f3fb141fce0c3fa6b7d4c00.setContent(html_c2aaa3480859e6fe855d1598c0d103fd);
+            
+        
+
+        circle_marker_cbd28117711cd3fcffe45d04a86c1389.bindPopup(popup_101223ff4f3fb141fce0c3fa6b7d4c00)
+        ;
+
+        
+    
+    
+            var circle_marker_1639347b5f3d60c4692572c71fd6b628 = L.circleMarker(
+                [52.10406150001407, 21.08015777492231],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(map_a805079d30e2ffb9d9d09a97f198d247);
+        
+    
+        var popup_741c645549ed2c112ccc26582e4a6ad4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ea0f8fcb2758012e6a626346feed1c60 = $(`<div id="html_ea0f8fcb2758012e6a626346feed1c60" style="width: 100.0%; height: 100.0%;">Income Tier: Mid-Range</div>`)[0];
+                popup_741c645549ed2c112ccc26582e4a6ad4.setContent(html_ea0f8fcb2758012e6a626346feed1c60);
+            
+        
+
+        circle_marker_1639347b5f3d60c4692572c71fd6b628.bindPopup(popup_741c645549ed2c112ccc26582e4a6ad4)
+        ;
+
+        
+    
+    
+            var circle_marker_d906719937b3bd9f0584a7c5677f9a92 = L.circleMarker(
+                [52.2108327312867, 21.00306305972137],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(map_a805079d30e2ffb9d9d09a97f198d247);
+        
+    
+        var popup_ace5d57fc2545f60834771c63f326ff8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_74e735922dce41d60afaffe5899e2ad5 = $(`<div id="html_74e735922dce41d60afaffe5899e2ad5" style="width: 100.0%; height: 100.0%;">Income Tier: Mid-Range</div>`)[0];
+                popup_ace5d57fc2545f60834771c63f326ff8.setContent(html_74e735922dce41d60afaffe5899e2ad5);
+            
+        
+
+        circle_marker_d906719937b3bd9f0584a7c5677f9a92.bindPopup(popup_ace5d57fc2545f60834771c63f326ff8)
+        ;
+
+        
+    
+    
+            var circle_marker_13409b38f0a51c90e73513579b846a97 = L.circleMarker(
+                [52.22116930979111, 21.219168681465444],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(map_a805079d30e2ffb9d9d09a97f198d247);
+        
+    
+        var popup_3269ff26e0dd019b5a7be67c3e59f378 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_796f38415b0e84da7b7895d7a9149a01 = $(`<div id="html_796f38415b0e84da7b7895d7a9149a01" style="width: 100.0%; height: 100.0%;">Income Tier: Low-Mid</div>`)[0];
+                popup_3269ff26e0dd019b5a7be67c3e59f378.setContent(html_796f38415b0e84da7b7895d7a9149a01);
+            
+        
+
+        circle_marker_13409b38f0a51c90e73513579b846a97.bindPopup(popup_3269ff26e0dd019b5a7be67c3e59f378)
+        ;
+
+        
+    
+    
+            var circle_marker_fc3fa136bef7bcc5d38833e196a751d0 = L.circleMarker(
+                [52.120876174127474, 20.986506719978205],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(map_a805079d30e2ffb9d9d09a97f198d247);
+        
+    
+        var popup_a70bbb69e3bae9ef579f634287ba1cf9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_380a885288a53d17e44087bc07a7d407 = $(`<div id="html_380a885288a53d17e44087bc07a7d407" style="width: 100.0%; height: 100.0%;">Income Tier: Mid-Range</div>`)[0];
+                popup_a70bbb69e3bae9ef579f634287ba1cf9.setContent(html_380a885288a53d17e44087bc07a7d407);
+            
+        
+
+        circle_marker_fc3fa136bef7bcc5d38833e196a751d0.bindPopup(popup_a70bbb69e3bae9ef579f634287ba1cf9)
+        ;
+
+        
+    
+    
+            var circle_marker_2b775bbedcad3395d144ab4c9ac158fb = L.circleMarker(
+                [52.17438170665834, 20.99294470000329],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(map_a805079d30e2ffb9d9d09a97f198d247);
+        
+    
+        var popup_a707c8670c853044d50a3e6300093f6d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9982faa3f70582d0b2683d6c1cd7799d = $(`<div id="html_9982faa3f70582d0b2683d6c1cd7799d" style="width: 100.0%; height: 100.0%;">Income Tier: Mid-Range</div>`)[0];
+                popup_a707c8670c853044d50a3e6300093f6d.setContent(html_9982faa3f70582d0b2683d6c1cd7799d);
+            
+        
+
+        circle_marker_2b775bbedcad3395d144ab4c9ac158fb.bindPopup(popup_a707c8670c853044d50a3e6300093f6d)
+        ;
+
+        
+    
+    
+            var circle_marker_fe640b708f129edebcc93a0d24f8feea = L.circleMarker(
+                [52.20707179914244, 20.963043030527047],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(map_a805079d30e2ffb9d9d09a97f198d247);
+        
+    
+        var popup_1e4b62f2c2549c347945ddab21a4a35c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_54907c7c40699f87dcf2c8097640c3b2 = $(`<div id="html_54907c7c40699f87dcf2c8097640c3b2" style="width: 100.0%; height: 100.0%;">Income Tier: Mid-Range</div>`)[0];
+                popup_1e4b62f2c2549c347945ddab21a4a35c.setContent(html_54907c7c40699f87dcf2c8097640c3b2);
+            
+        
+
+        circle_marker_fe640b708f129edebcc93a0d24f8feea.bindPopup(popup_1e4b62f2c2549c347945ddab21a4a35c)
+        ;
+
+        
+    
+    
+            var circle_marker_66142dd1bbb9ad3c8b9d49c06d307fa7 = L.circleMarker(
+                [52.1413402429365, 21.003850677884095],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(map_a805079d30e2ffb9d9d09a97f198d247);
+        
+    
+        var popup_a03599c65e4364c014278a3b5373d3a8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_dd632fb615d3471091d6d629e6a3be65 = $(`<div id="html_dd632fb615d3471091d6d629e6a3be65" style="width: 100.0%; height: 100.0%;">Income Tier: Mid-Range</div>`)[0];
+                popup_a03599c65e4364c014278a3b5373d3a8.setContent(html_dd632fb615d3471091d6d629e6a3be65);
+            
+        
+
+        circle_marker_66142dd1bbb9ad3c8b9d49c06d307fa7.bindPopup(popup_a03599c65e4364c014278a3b5373d3a8)
+        ;
+
+        
+    
+    
+            var circle_marker_8f4595020a8f0b94945aef962d1a53d6 = L.circleMarker(
+                [52.25257181497993, 21.204656946315623],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(map_a805079d30e2ffb9d9d09a97f198d247);
+        
+    
+        var popup_ea0aa71e7728a11dc9b884a73e637720 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_10d3ae21f111afe679c152938a34f68b = $(`<div id="html_10d3ae21f111afe679c152938a34f68b" style="width: 100.0%; height: 100.0%;">Income Tier: Low-Mid</div>`)[0];
+                popup_ea0aa71e7728a11dc9b884a73e637720.setContent(html_10d3ae21f111afe679c152938a34f68b);
+            
+        
+
+        circle_marker_8f4595020a8f0b94945aef962d1a53d6.bindPopup(popup_ea0aa71e7728a11dc9b884a73e637720)
+        ;
+
+        
+    
+    
+            var circle_marker_1f8643566f5b8a291b1397cf763c4de6 = L.circleMarker(
+                [52.1651109969466, 21.060175980151225],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(map_a805079d30e2ffb9d9d09a97f198d247);
+        
+    
+        var popup_b1604a2acd902ed0fde45108e51839e6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_05f6c6b08f1f42b933c9efda440ff886 = $(`<div id="html_05f6c6b08f1f42b933c9efda440ff886" style="width: 100.0%; height: 100.0%;">Income Tier: High</div>`)[0];
+                popup_b1604a2acd902ed0fde45108e51839e6.setContent(html_05f6c6b08f1f42b933c9efda440ff886);
+            
+        
+
+        circle_marker_1f8643566f5b8a291b1397cf763c4de6.bindPopup(popup_b1604a2acd902ed0fde45108e51839e6)
+        ;
+
+        
+    
+    
+            var circle_marker_4607c5d3efbb9ec155c6398009761413 = L.circleMarker(
+                [52.22528136686365, 20.91533474264147],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(map_a805079d30e2ffb9d9d09a97f198d247);
+        
+    
+        var popup_69f245c1b98c63738aaba09ad7890c8f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9b304a719da2267d1386a1050168fc31 = $(`<div id="html_9b304a719da2267d1386a1050168fc31" style="width: 100.0%; height: 100.0%;">Income Tier: Low-Mid</div>`)[0];
+                popup_69f245c1b98c63738aaba09ad7890c8f.setContent(html_9b304a719da2267d1386a1050168fc31);
+            
+        
+
+        circle_marker_4607c5d3efbb9ec155c6398009761413.bindPopup(popup_69f245c1b98c63738aaba09ad7890c8f)
+        ;
+
+        
+    
+    
+            var circle_marker_97e386856facd84a00af7c9986f2a78f = L.circleMarker(
+                [52.208203166375085, 20.998242835658104],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(map_a805079d30e2ffb9d9d09a97f198d247);
+        
+    
+        var popup_88b3afcc6f81d3617df42652f236d888 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0b47f2dbcf5186cc07e8b3ac2b60a0af = $(`<div id="html_0b47f2dbcf5186cc07e8b3ac2b60a0af" style="width: 100.0%; height: 100.0%;">Income Tier: Mid-Range</div>`)[0];
+                popup_88b3afcc6f81d3617df42652f236d888.setContent(html_0b47f2dbcf5186cc07e8b3ac2b60a0af);
+            
+        
+
+        circle_marker_97e386856facd84a00af7c9986f2a78f.bindPopup(popup_88b3afcc6f81d3617df42652f236d888)
+        ;
+
+        
+    
+    
+            var circle_marker_e9cefdea1780ff60bd337e5a9fe14145 = L.circleMarker(
+                [52.27064134260063, 20.984301141471335],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(map_a805079d30e2ffb9d9d09a97f198d247);
+        
+    
+        var popup_2b37b446e8ecec593523c28d026f6351 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_07cf5a2f405f5067eb633f503aede4a2 = $(`<div id="html_07cf5a2f405f5067eb633f503aede4a2" style="width: 100.0%; height: 100.0%;">Income Tier: High</div>`)[0];
+                popup_2b37b446e8ecec593523c28d026f6351.setContent(html_07cf5a2f405f5067eb633f503aede4a2);
+            
+        
+
+        circle_marker_e9cefdea1780ff60bd337e5a9fe14145.bindPopup(popup_2b37b446e8ecec593523c28d026f6351)
+        ;
+
+        
+    
+    
+            var circle_marker_f403f209ca412fe8f959657ce193495b = L.circleMarker(
+                [52.24018589518407, 21.198965057697254],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(map_a805079d30e2ffb9d9d09a97f198d247);
+        
+    
+        var popup_e3132e40bc5e6b14f4395e2e4e30c5e3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5fa313212ad01e289263c9ce5a79dfa4 = $(`<div id="html_5fa313212ad01e289263c9ce5a79dfa4" style="width: 100.0%; height: 100.0%;">Income Tier: Low-Mid</div>`)[0];
+                popup_e3132e40bc5e6b14f4395e2e4e30c5e3.setContent(html_5fa313212ad01e289263c9ce5a79dfa4);
+            
+        
+
+        circle_marker_f403f209ca412fe8f959657ce193495b.bindPopup(popup_e3132e40bc5e6b14f4395e2e4e30c5e3)
+        ;
+
+        
+    
+    
+            var circle_marker_ac770d11145d7ec4f4c20fc223e5445f = L.circleMarker(
+                [52.295143767308936, 21.075227100182065],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(map_a805079d30e2ffb9d9d09a97f198d247);
+        
+    
+        var popup_7132f6209d0a23f47d6d05c6a94ebf13 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c54d231cce6520c6d4b1afecf5d0967a = $(`<div id="html_c54d231cce6520c6d4b1afecf5d0967a" style="width: 100.0%; height: 100.0%;">Income Tier: Low-Mid</div>`)[0];
+                popup_7132f6209d0a23f47d6d05c6a94ebf13.setContent(html_c54d231cce6520c6d4b1afecf5d0967a);
+            
+        
+
+        circle_marker_ac770d11145d7ec4f4c20fc223e5445f.bindPopup(popup_7132f6209d0a23f47d6d05c6a94ebf13)
+        ;
+
+        
+    
+    
+            var circle_marker_a135881f968dfdc35e2443163149ecd4 = L.circleMarker(
+                [52.20330175396104, 21.24706315352201],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(map_a805079d30e2ffb9d9d09a97f198d247);
+        
+    
+        var popup_2045c70644e9bcb03c9899ee03b9757b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7718d1a9aed46c8cbdd7c56bc936cf33 = $(`<div id="html_7718d1a9aed46c8cbdd7c56bc936cf33" style="width: 100.0%; height: 100.0%;">Income Tier: Low-Mid</div>`)[0];
+                popup_2045c70644e9bcb03c9899ee03b9757b.setContent(html_7718d1a9aed46c8cbdd7c56bc936cf33);
+            
+        
+
+        circle_marker_a135881f968dfdc35e2443163149ecd4.bindPopup(popup_2045c70644e9bcb03c9899ee03b9757b)
+        ;
+
+        
+    
+    
+            var circle_marker_a28e6f84e3d5dd768f63ad5b2ddef2e0 = L.circleMarker(
+                [52.20424802574085, 20.95087795844329],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(map_a805079d30e2ffb9d9d09a97f198d247);
+        
+    
+        var popup_b06ecddd4da5de29b4ac65d1b8b34d3d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a9837554458dbb3aa13c204f35f91799 = $(`<div id="html_a9837554458dbb3aa13c204f35f91799" style="width: 100.0%; height: 100.0%;">Income Tier: Mid-Range</div>`)[0];
+                popup_b06ecddd4da5de29b4ac65d1b8b34d3d.setContent(html_a9837554458dbb3aa13c204f35f91799);
+            
+        
+
+        circle_marker_a28e6f84e3d5dd768f63ad5b2ddef2e0.bindPopup(popup_b06ecddd4da5de29b4ac65d1b8b34d3d)
+        ;
+
+        
+    
+    
+            var circle_marker_158251fd5bdc94b596fe37140dbc6362 = L.circleMarker(
+                [52.18788167897101, 21.020305310776763],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(map_a805079d30e2ffb9d9d09a97f198d247);
+        
+    
+        var popup_5541413a876f64339b2a1a0dd05d3ea6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5dfb06edaa1597a1a7f6d8fbf272b8d6 = $(`<div id="html_5dfb06edaa1597a1a7f6d8fbf272b8d6" style="width: 100.0%; height: 100.0%;">Income Tier: Mid-Range</div>`)[0];
+                popup_5541413a876f64339b2a1a0dd05d3ea6.setContent(html_5dfb06edaa1597a1a7f6d8fbf272b8d6);
+            
+        
+
+        circle_marker_158251fd5bdc94b596fe37140dbc6362.bindPopup(popup_5541413a876f64339b2a1a0dd05d3ea6)
+        ;
+
+        
+    
+    
+            var circle_marker_c9cec10f337b9581692445b706a5b261 = L.circleMarker(
+                [52.25323968045256, 21.014068708582155],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(map_a805079d30e2ffb9d9d09a97f198d247);
+        
+    
+        var popup_c4e967e9cbdb6d338b78cfb6d68a3cbb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d181647a642d167d0bcdc406ca3aec36 = $(`<div id="html_d181647a642d167d0bcdc406ca3aec36" style="width: 100.0%; height: 100.0%;">Income Tier: High</div>`)[0];
+                popup_c4e967e9cbdb6d338b78cfb6d68a3cbb.setContent(html_d181647a642d167d0bcdc406ca3aec36);
+            
+        
+
+        circle_marker_c9cec10f337b9581692445b706a5b261.bindPopup(popup_c4e967e9cbdb6d338b78cfb6d68a3cbb)
+        ;
+
+        
+    
+    
+            var circle_marker_c4c00c54c03b46f6f3edaf4f345c9271 = L.circleMarker(
+                [52.19328835130195, 20.987455391995574],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(map_a805079d30e2ffb9d9d09a97f198d247);
+        
+    
+        var popup_d8246a8495422031a41493820f0b5993 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9472d8914c5571b7e480d309c00eff0d = $(`<div id="html_9472d8914c5571b7e480d309c00eff0d" style="width: 100.0%; height: 100.0%;">Income Tier: Mid-Range</div>`)[0];
+                popup_d8246a8495422031a41493820f0b5993.setContent(html_9472d8914c5571b7e480d309c00eff0d);
+            
+        
+
+        circle_marker_c4c00c54c03b46f6f3edaf4f345c9271.bindPopup(popup_d8246a8495422031a41493820f0b5993)
+        ;
+
+        
+    
+    
+            var circle_marker_6391e22e7f3a87b494534458f8f88dd1 = L.circleMarker(
+                [52.14863299316105, 21.063518940070125],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(map_a805079d30e2ffb9d9d09a97f198d247);
+        
+    
+        var popup_36c3654eef64d527f6cbe57e3a523fc0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b74101f2064c8e454c66c261acee5167 = $(`<div id="html_b74101f2064c8e454c66c261acee5167" style="width: 100.0%; height: 100.0%;">Income Tier: Mid-Range</div>`)[0];
+                popup_36c3654eef64d527f6cbe57e3a523fc0.setContent(html_b74101f2064c8e454c66c261acee5167);
+            
+        
+
+        circle_marker_6391e22e7f3a87b494534458f8f88dd1.bindPopup(popup_36c3654eef64d527f6cbe57e3a523fc0)
+        ;
+
+        
+    
+</script>
+</html>
