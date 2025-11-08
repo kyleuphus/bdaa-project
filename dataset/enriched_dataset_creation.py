@@ -22,7 +22,6 @@ for df in (sessions, stations, customers, districts):
     for c in df.select_dtypes(include='object').columns:
           df[c] = df[c].astype(str).str.strip()
           
-# dtype fixes
 # sessions
 sessions['session_start_time'] = pd.to_datetime(sessions['session_start_time'], errors='coerce')
 for c in ['kwh_charged', 'cost_per_kwh', 'total_cost']:
@@ -51,7 +50,32 @@ if 'income_tier' in stations.columns:
 if 'income_tier' in customers.columns:
     customers = customers.rename(columns={'income_tier': 'customer_income_tier'})
 if 'income_tier' in districts.columns:
-    districts = districts.rename(columns={'income_tier': 'district_income_tier'})    
+    districts = districts.rename(columns={'income_tier': 'district_income_tier'}) 
+    
+# normalize income column values
+
+def normalize_tier(x):
+    if pd.isna(x):
+        return "unknown"
+    t = str(x).strip().lower()
+    if t in {"low", "mid",}:
+        return t
+    mapping = {
+        "low-mid": "low",
+        "mid-range": "mid",
+        "high": "high"
+    }
+    return mapping.get(t, "unknown")
+
+if 'station_income_tier' in stations.columns:
+    stations['station_income_tier'] = stations['station_income_tier'].apply(normalize_tier)
+    
+if 'customer_income_tier' in customers.columns:
+    customers['customer_income_tier'] = customers['customer_income_tier'].apply(normalize_tier)
+    
+if 'district_income_tier' in districts.columns:
+    districts['district_income_tier'] = districts['district_income_tier'].apply(normalize_tier)
+
 # join: sessions <- stations <- customers <- districts (left joins to keep all sessions)
 se = (
     sessions
