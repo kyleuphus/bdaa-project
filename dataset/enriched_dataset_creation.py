@@ -90,9 +90,6 @@ se['hour'] = dt.dt.hour
 se['dow'] = dt.dt.dayofweek
 se['is_weekend'] = se['dow'].isin([5, 6]).astype(int)
 
-se['price_per_kwh_realized'] = (
-    se['total_cost'] / se['kwh_charged']
-).replace([np.inf, -np.inf], np.nan)
 
 # keep relevant fields
 cols = [
