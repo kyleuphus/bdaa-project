@@ -1,0 +1,24 @@
+# Python bytecode / cache
+__pycache__/
+*.py[cod]
+
+# Jupyter artifacts
+.ipynb_checkpoints/
+
+# OS cruft
+.DS_Store
+Thumbs.db
+
+# Virtual envs (if you make one inside the repo)
+.venv/
+venv/
+.github/
+
+# Generated data/figures (reproducible outputs)
+data/processed/*
+reports/figs/*
+!data/processed/.gitkeep
+!reports/figs/.gitkeep
+
+# If your raw file is large or sensitive, ignore it:
+# data/raw/dataset.csv
